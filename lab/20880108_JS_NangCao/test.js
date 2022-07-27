@@ -1,3 +1,3 @@
-const slowRandom = require("./20880108_Ex04")
-
-console.log(slowRandom(4,5));
+export const hello = () => {
+    console.log('hello');
+}
