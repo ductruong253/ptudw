@@ -8,5 +8,4 @@ function slowRandom(min, max) {
     });
 }
 
-
 module.exports = slowRandom;

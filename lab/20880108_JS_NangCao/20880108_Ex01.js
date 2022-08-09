@@ -1,7 +1,6 @@
 'use strict'
-const helper = require('./20880108_Ex03');
-const helperSlow = require('./20880108_Ex05');
-let slowRandom = require('./20880108_Ex04');
+const controller = require('./20880108_Ex03');
+const slowController = require('./20880108_Ex05');
 
 const dsSinhVien = [
     {
@@ -164,19 +163,21 @@ const dsSinhVien = [
 console.log('>>>>>     Danh sach sinh vien duoc khoi tao: ');
 console.log(JSON.stringify(dsSinhVien));
 console.log('>>>>>     Danh sach sinh vien sau khi chay generate: ');
-helper.generate(dsSinhVien);
-// console.log(JSON.stringify(dsSinhVien));
-// console.log('>>>>>     Danh sach sinh vien sau khi chay average: ');
-// helper.average(dsSinhVien);
-// console.log(JSON.stringify(dsSinhVien));
-// console.log('>>>>>     Danh sach sinh vien sau khi chay normalize: ');
-// helper.normalize(dsSinhVien);
-// console.log(JSON.stringify(dsSinhVien));
-// console.log('>>>>>     Danh sach sinh vien sau khi chay slow-generate: ');
-// helperSlow.generate(dsSinhVien);
-// console.log(JSON.stringify(dsSinhVien));
-
+controller.generate(dsSinhVien);
+console.log(JSON.stringify(dsSinhVien));
+console.log('>>>>>     Danh sach sinh vien sau khi chay average: ');
+controller.average(dsSinhVien);
+console.log(JSON.stringify(dsSinhVien));
+console.log('>>>>>     Danh sach sinh vien sau khi chay normalize: ');
+controller.normalize(dsSinhVien);
+console.log(JSON.stringify(dsSinhVien));
+console.log('>>>>>     Danh sach sinh vien sau khi chay slow-generate: ');
 (async function () {
-    let x = await slowRandom(0, 10);
-    console.log(x);
-})()
+    await slowController.generate(dsSinhVien);
+    console.log(JSON.stringify(dsSinhVien));
+})();
+console.log('>>>>>     Danh sach sinh vien sau khi chay average (slowController): ');
+controller.average(dsSinhVien);
+console.log(JSON.stringify(dsSinhVien));
+console.log('>>>>>     Danh sach sinh vien sau khi chay normalize (slowController): ');
+controller.normalize(dsSinhVien);
