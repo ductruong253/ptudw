@@ -36,46 +36,6 @@ app.get('/:page', (req, res) => {
     res.render(page, {banner: banners[`${page}`]})
 })
 
-app.get('/cart', (req, res) => {
-    res.render('cart')
-})
-
-app.get('/category', (req, res) => {
-    res.render('category')
-})
-
-app.get('/checkout', (req, res) => {
-    res.render('checkout')
-})
-
-app.get('/confirmation', (req, res) => {
-    res.render('confirmation')
-})
-
-app.get('/contact', (req, res) => {
-    res.render('contact')
-})
-
-app.get('/login', (req, res) => {
-    res.render('login')
-})
-
-app.get('/register', (req, res) => {
-    res.render('register')
-})
-
-app.get('/single-blog', (req, res) => {
-    res.render('single-blog')
-})
-
-app.get('/single-product', (req, res) => {
-    res.render('single-product')
-})
-
-app.get('/tracking-order', (req, res) => {
-    res.render('tracking-order')
-})
-
 app.set('port', 8080);
 app.listen(app.get('port'), () => {
     console.log('Server started')
